@@ -27,6 +27,8 @@ public class EmployeeController {
         Employee employee = employeeService.getEmployeeById(id);
         return new ResponseEntity<Employee>(employee,HttpStatus.OK);
     }
+
+    @PostMapping(path = "/employees")
     public ResponseEntity<?> addEmployee(@RequestBody Employee employee)
     {
         employeeService.addEmployee(employee);
@@ -40,7 +42,7 @@ public class EmployeeController {
 
     }
 
-    @PutMapping ("/employees/")
+    @PutMapping ("/employees")
     public ResponseEntity<?> updateEmployee(@RequestBody Employee employee)
     {
         employeeService.updateEmployee(employee);
