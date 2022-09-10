@@ -9,16 +9,18 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class EmployeeController {
     @Autowired
     EmployeeService employeeService;
 
     @GetMapping(path = "/employees")
-    public ResponseEntity<Page<Employee>> getAllEmployees(Pageable pageable)
+    public ResponseEntity<List<Employee>> getAllEmployees(Pageable pageable)
     {
         Page<Employee> employeesPage = employeeService.getAllEmployees(pageable);
-        return new ResponseEntity<Page<Employee>>(employeesPage, HttpStatus.OK);
+        return new ResponseEntity<List<Employee>>(employeesPage.toList(), HttpStatus.OK);
 
     }
     @GetMapping(path = "/employees/{id}")

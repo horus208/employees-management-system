@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Employee} from "../model/Employee";
 
 @Component({
@@ -8,28 +8,23 @@ import {Employee} from "../model/Employee";
 })
 export class EmployeeCardComponent implements OnInit {
 
+  @Output() editEvent:EventEmitter<any>  = new EventEmitter();
+  @Output() deleteEvent:EventEmitter<any>  = new EventEmitter();
 
-  @Input() id: number = 2;
-  @Input() name: string = "John Doe";
-  @Input() email: string = "johnDoe@gmail.com";
-  @Input() imageUrl: string =  "";
-  @Input() jobTitle: string = "graphic designer";
-  @Input() employeeCode: string = "E458";
+  @Input()employee:Employee = new Employee(0,"","","","","");
 
-/*
-  constructor(id: number,name:string,email: string,jobTitle: string,imageUrl: string, employeeCode: string) {
-    this.id = id;
-    this.name =name;
-    this.email = email;
-    this.jobTitle = jobTitle;
-    this.imageUrl = imageUrl;
-    this.employeeCode=employeeCode;
-
-  }
-
- */
 
   ngOnInit(): void {
+  }
+
+  onEdit()
+  {
+
+    this.editEvent.emit({"modalName":"edit","employee":this.employee})
+  }
+  onDelete()
+  {
+    this.deleteEvent.emit({"modalName":"delete","employee":this.employee})
   }
 
 }

@@ -1,57 +1,41 @@
-<app-nav-bar xmlns="http://www.w3.org/1999/html"></app-nav-bar>
+
+
+
+
+
+<app-nav-bar xmlns="http://www.w3.org/1999/html"  (addEmployeeEvent)="onOpenModal($event)"></app-nav-bar>
   <div class="container-fluid" id="app-container">
 
+
     <div class="row" >
-      <div class="col-sm-3">
-        <app-employee-card></app-employee-card>
+      <div class="col-sm-3" *ngFor="let employee of employees">
+        <app-employee-card [employee]="employee" (editEvent)="onOpenModal($event)" (deleteEvent) = "onOpenModal($event)"></app-employee-card>
       </div>
-      <div class="col-sm-3">
-        <app-employee-card></app-employee-card>
-      </div>
-      <div class="col-sm-3">
-        <app-employee-card></app-employee-card>
-      </div>
-      <div class="col-sm-3">
-        <app-employee-card></app-employee-card>
-      </div>
+
+
     </div>
 
 
-    <!-- Button to Open the Modal -->
-    <button type="button" class="btn btn-primary" (click)="onOpenModal()">
-      Open modal
-    </button>
 
-    <dialog id = "myModal" >
-      <app-delete-modal></app-delete-modal>
+
+
+    <dialog id = "deleteModal" >
+      <div class="card border-0">
+      <app-delete-modal  (closeEvent)="onCloseModal($event)" (confirmEvent)="deleteEmployee()" ></app-delete-modal>
+      </div>
     </dialog>
 
-
-    <!-- The Modal -->
-    <div class="modal" >
-      <div class="modal-dialog">
-        <div class="modal-content">
-
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h4 class="modal-title">Modal Heading</h4>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-          </div>
-
-          <!-- Modal body -->
-          <div class="modal-body">
-            Modal body..
-          </div>
-
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-          </div>
-
+    <dialog id = "editModal">
+      <div class="card border-0">
+      <app-edit-modal [employee]="tempEmployee" (closeEvent)="onCloseModal($event)" (confirmEvent)="editEmployee($event.employee)"></app-edit-modal>
         </div>
-      </div>
-    </div>
+    </dialog>
 
+    <dialog id = "addModal" class="w-50 p-3" >
+      <div class="card border-0 ">
+        <app-add-modal (closeEvent)="onCloseModal($event)" (confirmEvent)="addEmployee($event)"></app-add-modal>
+      </div>
+    </dialog>
 
   </div>
 
