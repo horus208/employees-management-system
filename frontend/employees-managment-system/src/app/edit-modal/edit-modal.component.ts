@@ -20,7 +20,7 @@ export class EditModalComponent implements OnInit {
 
   onClose()
   {
-    this.closeEvent.emit({"name":"edit"});
+    this.closeEvent.emit("edit");
   }
 
   onSubmit(name:string,jopTitle:string,email:string,imageUrl:string)

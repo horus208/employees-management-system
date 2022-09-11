@@ -1,0 +1,11 @@
+.roundedElement
+{
+  border-radius: 100px;
+  border: 1.5px solid #FFFFFF;
+  background: #0D6EFD;
+  color:#FFFFFF ;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #FFFFFF;
+  opacity: 1; /* Firefox */
+}

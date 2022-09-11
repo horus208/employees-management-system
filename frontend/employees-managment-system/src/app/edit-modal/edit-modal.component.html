@@ -1,34 +1,34 @@
 <h2 class="text-primary" xmlns="http://www.w3.org/1999/html">Edit Employee:</h2>
-<hr>
+<hr style="border-color: #0D6EFD">
 
 <form class="row g-3">
   <div class="col-md-6">
-    <label for="inputName" class="form-label">Employee Name</label>
-    <input type="text" [defaultValue]="employee.name"  class="form-control" id="inputName" #name>
+    <label for="inputName" class="form-label text-primary">Employee Name</label>
+    <input type="text" [defaultValue]="employee.name"  class="form-control roundedElement" id="inputName" #name>
   </div>
   <div class="col-md-6">
-    <label for="inputJobTitle" class="form-label">Job Title</label>
-    <input type="text" [defaultValue]="employee.jobTitle"   class="form-control" id="inputJobTitle" #jopTitle>
+    <label for="inputJobTitle" class="form-label text-primary ">Job Title</label>
+    <input type="text" [defaultValue]="employee.jobTitle"   class="form-control roundedElement" id="inputJobTitle" #jopTitle>
   </div>
 
   <div class="col-12">
-    <label for="inputEmail" class="form-label" >Email</label>
-    <input type="email" [defaultValue]="employee.email" class="form-control" id="inputEmail" #email >
+    <label for="inputEmail" class="form-label text-primary" >Email</label>
+    <input type="email" [defaultValue]="employee.email" class="form-control roundedElement" id="inputEmail" #email >
   </div>
   <div class="col-12">
-    <label for="inputImageUrl" class="form-label">Image Url</label>
-    <input type="text" [defaultValue]="employee.imageUrl" class="form-control" id="inputImageUrl" #imageUrl>
+    <label for="inputImageUrl" class="form-label text-primary">Image Url</label>
+    <input type="text" [defaultValue]="employee.imageUrl" class="form-control roundedElement" id="inputImageUrl" #imageUrl>
   </div>
 <div class="mt-3">
-  <hr>
+  <hr style="border-color: #0D6EFD">
 
 </div>
   <div class="col-md-1">
-    <button type="button" class="btn btn-outline-primary" (click)="onClose()">Close</button>
+    <button type="button" class="btn btn-outline-primary roundedElement btn-sm" (click)="onClose()">Close</button>
   </div>
 
   <div class="col-1">
-    <button type="button" class="btn btn-outline-primary" (click)="onSubmit(name.value,jopTitle.value,email.value,imageUrl.value)">Confirm</button>
+    <button type="button" class="btn btn-outline-primary roundedElement btn-sm" (click)="onSubmit(name.value,jopTitle.value,email.value,imageUrl.value)">Confirm</button>
   </div>
 
 
