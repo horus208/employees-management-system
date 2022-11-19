@@ -51,7 +51,6 @@ export class AppComponent implements OnInit{
       addModal.close();
 
 
-    console.log("heeeeeeeeeey" + modalName);
 
   }
 
