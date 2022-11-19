@@ -7,5 +7,5 @@ system to manage employees using spring framework, mySql, and angular.
 ## database:
 - I used relational data model (sql),and mySql as a DBMS.
 ## frontEnd:
-- I used my basic knowledg about angular to build very basic front end using (html, bootstrap, ..)
+- I used my basic knowledg about angular to build a very basic front end using (html, bootstrap, ..)
 
